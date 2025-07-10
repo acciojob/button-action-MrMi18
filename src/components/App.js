@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import './../styles/App.css';
 
 const App = (props) => {
+const[hideOrShow,setHideOrShow] = useState("hide");
 
   return (
     <div className="App" id="main">
-      // Do not alter the main div
-    </div>
+      <p id="para" className={hideOrShow} style={{display: hideOrShow==="hide"?"none":""}} >Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>
+        <button id="click" onClick={() => {
+          if(hideOrShow==="hide")setHideOrShow("show");
+          else setHideOrShow("hide");
+        }} >Click</button>
+   </div>
   );
 }
 
